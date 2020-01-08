@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +22,15 @@ Route::get('/', function () {
 Route::get('/home',function()
 {
     return view('technology_site.index');
+});
+
+// ログインとユーザー登録は、URL,呼び出し関数の部分を変更する
+Route::get('/login', function()
+{
+    return view('technology_site.login');
+});
+
+Route::get('/user_registration', function()
+{
+    return view('technology_site.user_registration');
 });

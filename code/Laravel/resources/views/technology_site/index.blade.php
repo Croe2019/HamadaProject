@@ -10,9 +10,7 @@
         <h1>TechnologySite(仮)</h1>
         <img class="img" src="{{ asset('image/WEB.jpg')}}" alt="">
     </div>
-</body>
 
-<header>
     <div class="introduction_text">
        <h1>A lot of knowledge is here.</h1>
        <h2>
@@ -24,12 +22,12 @@
 
     <div class="user_registration">
         <!-- ここにユーザー登録画面に遷移するURLを設置する -->
-        <h1>ユーザー登録</h1>
+        <a class="no-color-chenge" href="/user_registration"><h1>ユーザー登録</h1></a>
     </div>
 
     <div class="login">
         <!-- ここにログイン画面に遷移するURLを設置する -->
-        <h1>ログイン</h1>
+        <a class="no-color-chenge" href="/login"> <h1>ログイン</h1> </a>
     </div>
 
     <form action="" method="">
@@ -47,6 +45,6 @@
         <!-- ここに人気の記事一覧を表示し、記事のページに遷移できるようにする -->
 
     </div>
-</header>
+</body>
     
 </html>

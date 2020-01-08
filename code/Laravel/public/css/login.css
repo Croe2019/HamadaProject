@@ -1,0 +1,35 @@
+
+.registration_form h1{
+    text-align: center;
+}
+
+.registration_form{
+    background-color: #fff;
+    width: 600px;
+    margin: 10px auto;
+    padding: 30px;
+}
+
+
+input{
+    font-size: 1.2em;
+    width: 100%;
+    padding: 8px;
+}
+
+button{
+    width: 100%;
+    background-color: #2096F3;
+    color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+
+a:link, a:visited, a:hover, a:active{
+    color: blue;
+}
+
+a.no-color-chenge{
+    color: blue;
+}
