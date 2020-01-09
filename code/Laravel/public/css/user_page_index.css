@@ -1,0 +1,17 @@
+.title h1{
+    position: absolute;
+    left: 300px;
+    font-size: 25px;
+}
+
+.Trend h1{
+    position: absolute;
+    left: 700px;
+    bottom: 600px;
+}
+
+.Trend h2{
+    position: absolute;
+    left: 500px;
+    bottom: 500px;
+}

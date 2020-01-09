@@ -24,6 +24,12 @@ Route::get('/home',function()
     return view('technology_site.index');
 });
 
+// ここに、ログイン後の記事一覧ページに遷移するを設置する
+/* Route::get('/test', function()
+{
+    return view('technology_site.user_page_index');
+}); */
+
 // ログインとユーザー登録は、URL,呼び出し関数の部分を変更する
 Route::get('/login', function()
 {
