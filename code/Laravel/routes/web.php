@@ -19,24 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home',function()
-{
-    return view('technology_site.index');
-});
+Route::get('/home','HomeController@index')->name('home');
 
 // ここに、ログイン後の記事一覧ページに遷移するを設置する
 /* Route::get('/test', function()
 {
     return view('technology_site.user_page_index');
 }); */
-
-// ログインとユーザー登録は、URL,呼び出し関数の部分を変更する
-Route::get('/login', function()
-{
-    return view('technology_site.login');
-});
-
-Route::get('/user_registration', function()
-{
-    return view('technology_site.user_registration');
-});
+Auth::routes();
+Route::get('/auth/logout', 'Auth\LoginController@logout');

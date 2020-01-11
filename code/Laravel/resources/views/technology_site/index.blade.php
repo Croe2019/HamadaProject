@@ -18,11 +18,21 @@
            コードを書いていて気づいたことや、自分がハマったあの仕様について、
            他のエンジニアと知見を共有しましょう ;)
         </h2>
+        <!-- ログインしているかどうかを判別するために記述※後でデザイン部分も含めて書き直す -->
+        @if(Auth::check())
+            <p>{{ Auth::user()->name }}さん</p>
+            <a href="/auth/logout" id="logout" class="my-navbar-item">ログアウト</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+        @else
+            ゲストさん
+        @endif
+
     </div>
 
     <div class="user_registration">
         <!-- ここにユーザー登録画面に遷移するURLを設置する -->
-        <a class="no-color-chenge" href="/user_registration"><h1>ユーザー登録</h1></a>
+        <a class="no-color-chenge" href="/register"><h1>ユーザー登録</h1></a>
     </div>
 
     <div class="login">
