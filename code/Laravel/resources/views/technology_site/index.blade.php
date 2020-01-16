@@ -27,7 +27,6 @@
         @else
             ゲストさん
         @endif
-
     </div>
 
     <div class="user_registration">
@@ -40,20 +39,15 @@
         <a class="no-color-chenge" href="/login"> <h1>ログイン</h1> </a>
     </div>
 
-    <form action="" method="">
-        <div class="registration_form">
-          <label>ユーザー名</label> <input type="name" id="name" name="name" placeholder="siteman" class="user_name">
-
-          <label>メールアドレス</label> <input type="email" id="email" name="email" placeholder="site@gmail.com" class="email_address">
-          
-          <input type="submit" value="登録する">
-        </div>
-    </form>
-    
-
     <div class="Trend">
         <!-- ここに人気の記事一覧を表示し、記事のページに遷移できるようにする -->
-
+        <!-- 後で表示位置を修正 -->
+        @foreach($articles as $article)
+                <a href="{{ route('technology_site.article_body', ['id' => $article->id]) }}" 
+                    class="list-group-item">
+                    {{ $article->title }}<br> 
+                </a>
+        @endforeach
     </div>
 </body>
     

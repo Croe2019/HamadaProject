@@ -19,12 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home','HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function(){
+    // ここに、ログイン後の記事一覧ページに遷移するを設置する
+    Route::get('/login/home', 'LoginHomeController@index')->name('login_home');
+    Route::get('/auth/logout', 'Auth\LoginController@logout');
+    Route::get('/article/create', 'ArticleController@ArticleCreateForm')->name('articles.create');
+    Route::post('/article/create', 'ArticleController@ArticleCreate');
+});
 
-// ここに、ログイン後の記事一覧ページに遷移するを設置する
-/* Route::get('/test', function()
-{
-    return view('technology_site.user_page_index');
-}); */
+// 記事本文は、ログインや、会員登録してなくても閲覧できるようにする
+Route::get('/home','HomeController@index')->name('home');
+Route::get('/article/{id}/body', 'LoginHomeController@body')->name('technology_site.article_body');
+
 Auth::routes();
-Route::get('/auth/logout', 'Auth\LoginController@logout');
