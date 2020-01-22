@@ -16,10 +16,24 @@
     bottom: 500px;
 }
 
+.Trend h3{
+    position: absolute;
+    font-size: 15px;
+    left: 1200px;
+    margin: 0 5px 0 0;
+    
+}
+
 .Article h2{
     position: absolute;
     left: 700px;
     bottom: 150px;
+}
+
+.articles-table{
+    position: absolute;
+    left: 740px;
+    bottom: 50px;
 }
 
 a:link, a:visited, a:hover, a:active{

@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>TechnologySite</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{{ asset('css/user_page_index.css') }}">
 </head>
 <body>
@@ -15,18 +20,18 @@
         <h1>トレンド</h1>
         <h2>ここに記事一覧を表示し、各記事ごとのURLを設置する</h2>
 
-        @if(Auth::check())
-            <p>{{ Auth::user()->name }}さん</p>
-            <a href="/auth/logout" id="logout" class="my-navbar-item">ログアウト</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          {{ csrf_field() }}
-        @else
-            ゲストさん
-        @endif
-    </div>
-
-    <div class="Create">
-        <a href="/article/create">作成画面へ</a>
+        <!-- ユーザ名等は、ドロップボックス式にする -->
+        <h3>
+            @if(Auth::check())
+                {{ Auth::user()->name }}さん
+                <a href="/auth/logout" id="logout" class="my-navbar-item">ログアウト</a>
+                <a href="/article/create">作成画面へ</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            @else
+                ゲストさん
+            @endif
+        </h3>
     </div>
 
     <div class="Article">
@@ -40,6 +45,16 @@
             @endforeach
         </h2>
     </div>
+
+    {{-- データが取得できれば以下表示 --}}
+    @if(count($articles) > 0)
+    <div class="articles-table">
+        <h2>
+            {{-- ページリンクを表示 --}}
+            {{ $articles->links() }}
+        </h2>
+    </div>
+    @endif
 
 </body>
     

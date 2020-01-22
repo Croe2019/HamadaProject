@@ -9,7 +9,10 @@ class LoginHomeController extends Controller
     public function Index()
     {
         // 全ての記事を取得する(ここは後で、トレンド順等に変更)
-        $articles = Article::all();
+        //$articles = Article::all();
+
+        // ページネーションをDBの結果を格納
+        $articles = Article::orderBy('created_at', 'desc')->paginate(5);
         
         return view('technology_site.user_page_index', [
             'articles' => $articles,

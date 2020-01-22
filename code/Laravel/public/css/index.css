@@ -48,6 +48,19 @@
     white-space: pre-wrap;
 }
 
+.Trend{
+    position: absolute;
+    font-size: 30px;
+    left: 700px;
+    bottom: -150px;
+}
+
+.articles-table{
+    position: absolute;
+    left: 750px;
+    bottom: -250px;
+}
+
 a:link, a:visited, a:hover, a:active{
     color: black;
 }
