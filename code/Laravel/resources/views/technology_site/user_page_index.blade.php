@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TechnologySite</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -12,14 +13,14 @@
 </head>
 <body>
     <div class="title">
-        <h1>TechnologySite(仮)</h1>
+        <h1>Record of Knowledge</h1>
+        <img class="img" src="{{ asset('image/background.jpeg')}}" alt="">
     </div>
 
     <div class="Trend">
         <!-- ここに人気の記事一覧を表示し、記事のページに遷移できるようにする -->
-        <h1>トレンド</h1>
-        <h2>ここに記事一覧を表示し、各記事ごとのURLを設置する</h2>
-
+        <h1>記事一覧</h1>
+        
         <!-- ユーザ名等は、ドロップボックス式にする -->
         <h3>
             @if(Auth::check())

@@ -41,12 +41,12 @@
         <div class="col-sm-8 col-sm-offset-2">
             <div class="form-group">
                 <label for="name">タイトル<span class="label label-danger"></span></label>
-                <input type="text" name="title" class="form-control" required>
+                <input type="text" name="title" class="form-control" placeholder="タイトル" required>
             </div>
             
             <div class="form-group">
                 <label for="message">本文</label>
-                <textarea name="blog_text" rows="10" class="form-control"></textarea>
+                <textarea name="blog_text" rows="10" class="form-control" placeholder="markdown記法で書いて共有しよう"></textarea>
             </div>
             <button type="submit" class="btn btn-default">送信する</button>
         </div><!-- col-sm-8 -->

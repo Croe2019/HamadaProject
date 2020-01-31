@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="title">
-        <h1>TechnologySite(仮)</h1>
+        <h1>Record of Knowledge</h1>
         <img class="img" src="{{ asset('image/WEB.jpg')}}" alt="">
     </div>
 
