@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function(){
     // ここに、ログイン後の記事一覧ページに遷移するを設置する
     Route::get('/login/home', 'LoginHomeController@index')->name('login_home');
+    Route::get('/my_page/{id}', 'UserController@Mypage')->name('UserMyPage.my_page');
+    Route::get('/settings/profile', 'UserController@ShowSetting')->name('UserMyPage.profile_setting');
     Route::get('/auth/logout', 'Auth\LoginController@logout');
     Route::get('/article/create', 'ArticleController@ArticleCreateForm')->name('articles.create');
     Route::post('/article/create', 'ArticleController@ArticleCreate');

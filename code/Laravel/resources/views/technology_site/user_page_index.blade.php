@@ -27,6 +27,7 @@
                 {{ Auth::user()->name }}さん
                 <a href="/auth/logout" id="logout" class="my-navbar-item">ログアウト</a>
                 <a href="/article/create">作成画面へ</a>
+                <a href="/my_page/{id}">マイページ</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             @else
